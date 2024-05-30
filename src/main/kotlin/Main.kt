@@ -41,6 +41,13 @@ fun main(args: Array<String>) {
             }
 
             println("Complete: $counter / $copies")
+            es.shutdown()
+        }
+        "client" -> {
+            val secondsToRun = Integer.parseInt(args[2])
+            val threads = Integer.parseInt(args[3])
+            val crm = ClientRequestMonitor(client, secondsToRun, threads)
+            crm.run()
         }
         else -> {
             println("Unknown command: $cmd")
