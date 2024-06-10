@@ -29,6 +29,7 @@ fun main(args: Array<String>) {
                 items["k$i"] = v
             }
             map.setAll(items)
+            println("keys: $keys, value-size(bytes): $valueSizeBytes, map-size(bytes): ~${keys * valueSizeBytes}")
         }
         "copy" -> {
             val copies = Integer.parseInt(args[2])
